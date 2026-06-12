@@ -22,10 +22,17 @@
 
   // ---- mark current nav item ----
   function initNav() {
-    var path = location.pathname.split('/').pop() || 'index.html';
+    function key(s) {
+      if (!s) return 'index';
+      s = s.split('#')[0].split('?')[0];     // strip hash/query
+      s = s.replace(/\/+$/, '');             // strip trailing slash
+      s = s.substring(s.lastIndexOf('/') + 1); // last path segment
+      s = s.replace(/\.html$/, '');          // drop .html extension
+      return s || 'index';
+    }
+    var current = key(location.pathname);
     document.querySelectorAll('.nav__menu a').forEach(function (a) {
-      var href = a.getAttribute('href');
-      if (href === path) a.setAttribute('aria-current', 'page');
+      if (key(a.getAttribute('href')) === current) a.setAttribute('aria-current', 'page');
     });
   }
 

@@ -80,7 +80,7 @@
     wrap.setAttribute('aria-label', 'Cookietoestemming');
     wrap.innerHTML =
       '<div class="cookie__inner shell">' +
-        '<p class="cookie__text">Deze site gebruikt cookies om het bezoek te analyseren en de doeltreffendheid van advertenties te meten. U kiest zelf. <a href="privacy.html">Privacybeleid</a>.</p>' +
+        '<p class="cookie__text">Deze site gebruikt cookies om het bezoek te analyseren en de doeltreffendheid van advertenties te meten. U kiest zelf. <a href="/privacy">Privacybeleid</a>.</p>' +
         '<div class="cookie__actions">' +
           '<button type="button" class="cookie__btn cookie__btn--ghost" data-cc="deny">Weigeren</button>' +
           '<button type="button" class="cookie__btn" data-cc="accept">Accepteren</button>' +
