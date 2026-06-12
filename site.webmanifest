@@ -1,0 +1,22 @@
+{
+  "name": "Dulguun Otgonjav Interior Architect",
+  "short_name": "Dulguun Otgonjav",
+  "description": "Interieurarchitect in België — rustige, mensgerichte interieurs.",
+  "lang": "nl-BE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFAF8",
+  "theme_color": "#FBFAF8",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
