@@ -36,7 +36,20 @@
     });
   }
 
+  // ---- hero slideshow (crossfade) ----
+  function initHero() {
+    var slides = document.querySelectorAll('.hero__slide');
+    if (slides.length < 2) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var i = 0;
+    setInterval(function () {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 5000);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { initReveal(); initNav(); });
-  } else { initReveal(); initNav(); }
+    document.addEventListener('DOMContentLoaded', function () { initReveal(); initNav(); initHero(); });
+  } else { initReveal(); initNav(); initHero(); }
 })();
