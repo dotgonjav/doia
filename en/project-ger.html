@@ -48,7 +48,7 @@
 <style>
   .nav__brand { font-size: 0.65rem; letter-spacing: 0.18em; }
 
-  .proj-hero { position: relative; height: 80svh; min-height: 480px; }
+  .proj-hero { position: relative; height: 100svh; min-height: 580px; }
   .proj-hero .frame { position: absolute; inset: 0; }
   .proj-hero__scrim {
     position: absolute; inset: 0; z-index: 2; pointer-events: none;
@@ -61,6 +61,18 @@
   }
   .proj-hero__title { font-weight: 300; font-size: clamp(2.6rem, 7vw, 6rem); letter-spacing: -0.02em; line-height: 1; color: #fff; }
   .proj-hero__meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,.80); text-align: right; }
+
+  .proj-hero__scroll {
+    position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+    z-index: 3; color: rgba(255,255,255,.72); pointer-events: none;
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem;
+    display: inline-flex; align-items: center; gap: 9px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .proj-hero__scroll .arrow { animation: scrollNudge 1.8s ease-in-out infinite; }
+  }
+  @keyframes scrollNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+  @media (max-width: 600px) { .proj-hero__scroll { display: none; } }
 
   .specs { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-block: clamp(36px,5vw,60px); }
   @media (min-width: 700px) { .specs { grid-template-columns: repeat(4,1fr); } }
@@ -124,6 +136,7 @@
     <h1 class="proj-hero__title">Ger</h1>
     <div class="proj-hero__meta">Kitchen &amp; Living room · Antwerp<br />2025</div>
   </div>
+  <div class="proj-hero__scroll"><span>Scroll</span><span class="arrow">↓</span></div>
 </header>
 
 <main>

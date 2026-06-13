@@ -102,7 +102,17 @@
   }
   .hero__row { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
   .hero__row .mono { color: rgba(255,255,255,.88); }
-  .scrolltip { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.64rem; color: rgba(255,255,255,.7); }
+  .hero__scroll {
+    position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+    z-index: 3; color: rgba(255,255,255,.72); pointer-events: none;
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem;
+    display: inline-flex; align-items: center; gap: 9px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__scroll .arrow { animation: scrollNudge 1.8s ease-in-out infinite; }
+  }
+  @keyframes scrollNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+  @media (max-width: 600px) { .hero__scroll { display: none; } }
 
   /* ethos */
   .ethos { display: grid; gap: clamp(28px, 5vw, 60px); padding-block: clamp(72px, 11vw, 150px); }
@@ -184,9 +194,9 @@
     <h1 class="visually-hidden">Dulguun Otgonjav Interior Architect — interieurarchitect in België</h1>
     <div class="hero__row">
       <span class="mono">Dulguun Otgonjav Interior Architect · België · 2026</span>
-      <span class="scrolltip">Scroll ↓</span>
     </div>
   </div>
+  <div class="hero__scroll"><span>Scroll</span><span class="arrow">↓</span></div>
 </header>
 
 <main>
