@@ -1,45 +1,28 @@
 /* =========================================================================
-   DOIA — Google Analytics 4 + Google Ads, met cookietoestemming
-   Consent Mode v2: standaard wordt alles geweigerd tot de bezoeker akkoord
-   gaat via de cookiemelding (EU/GDPR-conform).
+   DOIA — Cookietoestemming + conversiemeting
+   ---------------------------------------------------------------------------
+   De Google-tag (gtag.js), Consent Mode v2-standaard en de config staan
+   nu RECHTSTREEKS in de <head> van elke pagina (officiële Google-installatie,
+   zo wordt de tag betrouwbaar gedetecteerd). Dit bestand regelt enkel nog:
+     1. de cookiemelding (accepteren / weigeren),
+     2. het bijwerken van de toestemming (Consent Mode update),
+     3. de conversie bij een verzonden contactformulier.
    ========================================================================= */
 (function () {
-  var GA_ID  = 'G-76XWVX3HCH';
   var ADS_ID = 'AW-18149300990';
-  /* ↓ Vervang door je Google Ads-conversielabel (het deel ná de schuine streep
-       in 'AW-18149300990/XXXXXXXX'). Tot dan registreert Ads nog geen conversie. */
+  /* Google Ads-conversielabel (deel ná de schuine streep in 'AW-…/XXXX'). */
   var ADS_CONVERSION_LABEL = 'eXc8CMHhhr4cEP61oc5D';
   var KEY = 'doia-consent';
 
+  /* Veiligheidsnet: als het head-fragment om wat voor reden niet liep,
+     toch een werkende gtag-stub voorzien zodat niets stukloopt. */
   window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-
-  gtag('js', new Date());
-
-  /* Standaard: alles geweigerd tot toestemming */
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied',
-    wait_for_update: 500
-  });
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function () { dataLayer.push(arguments); };
+  }
 
   var choice = null;
   try { choice = localStorage.getItem(KEY); } catch (e) {}
-
-  if (choice === 'granted') grantConsent();
-
-  /* gtag.js laden (faalt stil in afgeschermde preview-omgevingen) */
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  s.onerror = function () { /* extern script geblokkeerd (bv. preview/adblock) — geen actie nodig */ };
-  document.head.appendChild(s);
-
-  gtag('config', GA_ID, { anonymize_ip: true });
-  gtag('config', ADS_ID);
 
   function grantConsent() {
     gtag('consent', 'update', {

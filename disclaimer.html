@@ -24,6 +24,33 @@
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#FBFAF8" />
 <link rel="stylesheet" href="styles.css" />
+<!-- Google tag (gtag.js) — officiële installatie + Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76XWVX3HCH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+  try {
+    if (localStorage.getItem('doia-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
+    }
+  } catch (e) {}
+  gtag('config', 'G-76XWVX3HCH', { anonymize_ip: true });
+  gtag('config', 'AW-18149300990');
+</script>
 <script src="analytics.js" defer></script>
 <style>
   .nav__brand { font-size: 0.65rem; letter-spacing: 0.18em; }
