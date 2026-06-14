@@ -95,6 +95,13 @@
 
   .wide-img { aspect-ratio: 16 / 8; margin-block: clamp(20px,3vw,40px); }
 
+  /* materiaal — zintuiglijk triptiek */
+  .senses { margin-top: clamp(30px,5vw,56px); display: grid; gap: 0; }
+  @media (min-width: 720px) { .senses { grid-template-columns: repeat(3, 1fr); column-gap: clamp(28px,4vw,56px); } }
+  .sense { padding: clamp(26px,3.5vw,42px) 0; border-top: 1px solid var(--line); }
+  .sense__label { display: block; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.66rem; color: var(--accent); margin-bottom: 16px; }
+  .sense p { color: var(--ink-2); font-weight: 300; max-width: 32ch; }
+
   /* process */
   .process { padding-block: clamp(60px,9vw,120px); border-top: 1px solid var(--line); }
   .process__list { border-top: 1px solid var(--line); margin-top: clamp(30px,5vw,56px); }
@@ -202,26 +209,55 @@
     <div class="block__body reveal d1">
       <p>U weet wat u níét wil. Een generiek interieur. Iets dat er goed uitziet op foto's maar nooit echt als thuis aanvoelt. Een ontwerper die drie moodboards voorlegt en u vraagt te kiezen.</p>
       <p>Hier gaat het anders. Uw project begint met een echt gesprek, niet met een briefing — en met aandacht voor de dingen die niet op moodboards staan: hoe u zich 's ochtends door uw ruimte beweegt, wat u laat talmen in een kamer, wat u altijd al wou maar nooit de woorden voor vond.</p>
-      <p>Wat volgt is een interieur gebouwd uit eerlijke materialen — <span class="pull">eik die warmte draagt vóór u het aanraakt, linnen dat zachter wordt met gebruik, steen die de juiste temperatuur aanhoudt voor het seizoen.</span></p>
+      <p>Wat volgt is een interieur gebouwd uit eerlijke materialen, <span class="pull">afgestemd op hoe u leeft — niet op hoe het fotografeert.</span></p>
     </div>
   </section>
+
+  <!-- MATERIAAL -->
+  <section class="shell block">
+    <div class="block__head reveal">
+      <span class="eyebrow">(03) — Materiaal</span>
+      <h2>Materiaal dat u voelt voor u het ziet.</h2>
+    </div>
+    <div class="block__body reveal d1">
+      <p>Een materiaal kiezen is geen esthetische beslissing. Het bepaalt hoe een ruimte elke dag aanvoelt — en wat ze over tien, twintig jaar nog te zeggen heeft.</p>
+      <p>Natuurlijke materialen verouderen niet, ze rijpen. Eik die generaties meegaat, natuursteen die niet uit de mode raakt, leem en linnen die hersteld worden in plaats van vervangen — uit hernieuwbare bronnen, zonder uitdampende afwerkingen. <span class="pull">Minder vervangen is minder verspillen; duurzaamheid is hier geen toevoeging, maar het gevolg van goed kiezen.</span></p>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="senses">
+      <div class="sense reveal">
+        <span class="sense__label">Geur</span>
+        <p>Onbehandeld hout en natuursteen geuren subtiel en levend — een ruimte die ruikt naar wat ze ís, niet naar lak of lijm.</p>
+      </div>
+      <div class="sense reveal d1">
+        <span class="sense__label">Temperatuur</span>
+        <p>Steen houdt koelte vast in de zomer, hout draagt warmte nog voor u het aanraakt. Materiaal dat met het seizoen meebeweegt.</p>
+      </div>
+      <div class="sense reveal d2">
+        <span class="sense__label">Textuur</span>
+        <p>De nerf van eik, de korrel van leem, de hand van linnen — oppervlakken die de vingertoppen herkennen en uitnodigen tot aanraken.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- WAT MIJN WERK STUURT -->
   <section class="shell block">
     <div class="block__head reveal">
-      <span class="eyebrow">(03) — Wat het werk stuurt</span>
+      <span class="eyebrow">(04) — Wat het werk stuurt</span>
       <h2>Kwaliteit boven kwantiteit. Altijd.</h2>
     </div>
     <div class="block__body reveal d1">
-      <p>Natuurlijke materialen zijn altijd de eerste keuze. Niet als trend, maar als overtuiging. <span class="pull">Afgewerkte oppervlakken verouderen slecht. Eerlijke materialen niet.</span></p>
-      <p>Diezelfde zorg vraagt tijd. Daarom krijgt elk jaar bewust maar een beperkt aantal projecten een plaats. Niet om exclusiviteit te creëren, maar omdat echte aandacht niet te schalen valt. Zo krijgt uw project het volledige gewicht dat het verdient, van het eerste gesprek tot het laatste detail.</p>
+      <p>Diezelfde zorg vraagt tijd. Daarom krijgt elk jaar bewust maar een beperkt aantal projecten een plaats — niet om exclusiviteit te creëren, maar omdat echte aandacht niet te schalen valt.</p>
+      <p>Zo krijgt uw project <span class="pull">het volledige gewicht dat het verdient.</span></p>
     </div>
   </section>
 
   <!-- PROCESS -->
   <section class="shell process">
     <div class="section-head reveal">
-      <h2 class="eyebrow">(04) — Werkwijze</h2>
+      <h2 class="eyebrow">(05) — Werkwijze</h2>
       <span class="mono" style="color: var(--ink-3);">Volledig traject</span>
     </div>
     <div class="process__list">
@@ -237,7 +273,7 @@
   <!-- FAQ -->
   <section class="shell faq">
     <div class="section-head reveal">
-      <h2 class="eyebrow">(05) — Veelgestelde vragen</h2>
+      <h2 class="eyebrow">(06) — Veelgestelde vragen</h2>
     </div>
     <div class="faq__list">
       <div class="qa reveal">

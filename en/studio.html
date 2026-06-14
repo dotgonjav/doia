@@ -95,6 +95,13 @@
 
   .wide-img { aspect-ratio: 16 / 8; margin-block: clamp(20px,3vw,40px); }
 
+  /* material — sensory triptych */
+  .senses { margin-top: clamp(30px,5vw,56px); display: grid; gap: 0; }
+  @media (min-width: 720px) { .senses { grid-template-columns: repeat(3, 1fr); column-gap: clamp(28px,4vw,56px); } }
+  .sense { padding: clamp(26px,3.5vw,42px) 0; border-top: 1px solid var(--line); }
+  .sense__label { display: block; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.66rem; color: var(--accent); margin-bottom: 16px; }
+  .sense p { color: var(--ink-2); font-weight: 300; max-width: 32ch; }
+
   /* process */
   .process { padding-block: clamp(60px,9vw,120px); border-top: 1px solid var(--line); }
   .process__list { border-top: 1px solid var(--line); margin-top: clamp(30px,5vw,56px); }
@@ -202,26 +209,55 @@
     <div class="block__body reveal d1">
       <p>You know what you don't want. A generic interior. Something that looks good in photos but never truly feels like home. A designer who presents three moodboards and asks you to choose.</p>
       <p>Here it works differently. Your project begins with a real conversation, not a brief — and with attention for the things that don't appear on moodboards: how you move through your space in the morning, what makes you linger in a room, what you always wanted but never found the words for.</p>
-      <p>What follows is an interior built from honest materials — <span class="pull">oak that carries warmth before you touch it, linen that softens with use, stone that holds the right temperature for the season.</span></p>
+      <p>What follows is an interior built from honest materials, <span class="pull">attuned to how you live — not to how it photographs.</span></p>
     </div>
   </section>
+
+  <!-- MATERIAL -->
+  <section class="shell block">
+    <div class="block__head reveal">
+      <span class="eyebrow">(03) — Material</span>
+      <h2>Material you feel before you see it.</h2>
+    </div>
+    <div class="block__body reveal d1">
+      <p>Choosing a material is not an aesthetic decision. It shapes how a space feels every day — and what it still has to say ten, twenty years from now.</p>
+      <p>Natural materials don't age, they mature. Oak that lasts for generations, natural stone that never goes out of style, clay and linen that can be repaired rather than replaced — from renewable sources, without off-gassing finishes. <span class="pull">Replacing less means wasting less; here, durability is not an addition, but the result of choosing well.</span></p>
+    </div>
+  </section>
+
+  <div class="shell">
+    <div class="senses">
+      <div class="sense reveal">
+        <span class="sense__label">Smell</span>
+        <p>Untreated wood and natural stone carry a subtle, living scent — a room that smells of what it ís, not of varnish or glue.</p>
+      </div>
+      <div class="sense reveal d1">
+        <span class="sense__label">Temperature</span>
+        <p>Stone holds its coolness in summer, wood carries warmth before you touch it. Material that moves with the season.</p>
+      </div>
+      <div class="sense reveal d2">
+        <span class="sense__label">Texture</span>
+        <p>The grain of oak, the tooth of clay, the hand of linen — surfaces the fingertips recognise and that invite touch.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- WHAT DRIVES THE WORK -->
   <section class="shell block">
     <div class="block__head reveal">
-      <span class="eyebrow">(03) — What drives the work</span>
+      <span class="eyebrow">(04) — What drives the work</span>
       <h2>Quality over quantity. Always.</h2>
     </div>
     <div class="block__body reveal d1">
-      <p>Natural materials are always the first choice. Not as a trend, but as a conviction. <span class="pull">Finished surfaces age badly. Honest materials don't.</span></p>
-      <p>That same care takes time. That is why only a limited number of projects are given a place each year. Not to create exclusivity, but because real attention cannot be scaled. So your project receives the full weight it deserves, from the first conversation to the final detail.</p>
+      <p>That same care takes time. That is why only a limited number of projects are given a place each year — not to create exclusivity, but because real attention cannot be scaled.</p>
+      <p>So your project receives <span class="pull">the full weight it deserves.</span></p>
     </div>
   </section>
 
   <!-- PROCESS -->
   <section class="shell process">
     <div class="section-head reveal">
-      <h2 class="eyebrow">(04) — Process</h2>
+      <h2 class="eyebrow">(05) — Process</h2>
       <span class="mono" style="color: var(--ink-3);">Full project</span>
     </div>
     <div class="process__list">
@@ -237,7 +273,7 @@
   <!-- FAQ -->
   <section class="shell faq">
     <div class="section-head reveal">
-      <h2 class="eyebrow">(05) — Frequently asked questions</h2>
+      <h2 class="eyebrow">(06) — Frequently asked questions</h2>
     </div>
     <div class="faq__list">
       <div class="qa reveal">
