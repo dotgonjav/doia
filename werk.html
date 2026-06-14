@@ -106,6 +106,17 @@
     letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
   }
   .card__meta span + span::before { content: "·"; margin-right: 8px; }
+
+  .card__cta {
+    display: inline-flex; align-items: center; gap: 9px;
+    margin-top: 18px;
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em;
+    font-size: 0.66rem; color: var(--ink);
+    border-bottom: 1px solid var(--ink); padding-bottom: 4px;
+    transition: gap 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease);
+  }
+  .card__cta span { transition: transform 0.4s var(--ease); }
+  .card:hover .card__cta { gap: 15px; color: var(--accent); border-color: var(--accent); }
 </style>
 </head>
 <body>
@@ -143,6 +154,7 @@
         <span>Antwerpen</span>
         <span>2025</span>
       </div>
+      <span class="card__cta">Bekijk project <span aria-hidden="true">&rarr;</span></span>
     </a>
 
     <a href="/project-ger" class="card reveal d1">
@@ -157,6 +169,7 @@
         <span>Antwerpen</span>
         <span>2025</span>
       </div>
+      <span class="card__cta">Bekijk project <span aria-hidden="true">&rarr;</span></span>
     </a>
 
     <a href="/project-shar" class="card reveal d2">
@@ -171,6 +184,7 @@
         <span>Antwerpen</span>
         <span>2025</span>
       </div>
+      <span class="card__cta">Bekijk project <span aria-hidden="true">&rarr;</span></span>
     </a>
 
   </section>
