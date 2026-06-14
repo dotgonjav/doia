@@ -134,6 +134,17 @@
   .note p:last-child { margin-bottom: 0; }
 
   /* prev/next */
+  .proj-cta { border-top: 1px solid var(--line); padding-block: clamp(50px,8vw,100px); display: grid; gap: clamp(22px,3vw,30px); }
+  .proj-cta > p { font-weight: 300; letter-spacing: -0.01em; font-size: clamp(1.5rem,3vw,2.3rem); line-height: 1.12; max-width: 22ch; }
+  .proj-cta__actions { display: flex; align-items: center; gap: clamp(20px,3vw,36px); flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem;
+    border: 1px solid var(--ink); padding: 16px 30px; cursor: pointer;
+    transition: background 0.4s var(--ease), color 0.4s var(--ease), gap 0.4s var(--ease);
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; gap: 20px; }
   .proj-nav {
     border-top: 1px solid var(--line);
     display: grid; grid-template-columns: 1fr auto 1fr;
@@ -250,6 +261,14 @@
     <div class="reveal d1">
       <p>Het bestaande casco bleef zoals het was: verticaal bekistingsbeton, ruw en aards, met de nerf van de planken nog zichtbaar. Daartegen leest de nieuwe ingreep als iets op zichzelf — los geplaatst, omkeerbaar, herkenbaar aan kleur. De stalen draagstructuur en wenteltrap zijn in één zacht blauw gepoederlakt; de trap draait als een lichte spiraal door de dubbele hoogte, gedragen door een eikenhouten balklaag voor de verdiepingsvloer.</p>
       <p>De bewoonde functies zijn bekleed met geel mortex — een doorlopende, minerale afwerking zonder voeg die keuken, bad en lavabo tot één warm volume bindt. Roestvrij staal voor de kranen en de vrijstaande douche, verder niets dat de twee kleuren stoort. Blauw voor wat draagt, geel voor wat bewoont: de structuur vertelt zelf waar gewerkt wordt en waar geleefd.</p>
+    </div>
+  </section>
+
+  <section class="shell proj-cta">
+    <p class="reveal">Een eigen ruimte in gedachten?</p>
+    <div class="proj-cta__actions reveal d1">
+      <a href="/contact" class="btn">Start uw project →</a>
+      <a href="/studio" class="link-line">Lees hoe ik werk →</a>
     </div>
   </section>
 

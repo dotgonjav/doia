@@ -134,6 +134,17 @@
   .note p:last-child { margin-bottom: 0; }
 
   /* prev/next */
+  .proj-cta { border-top: 1px solid var(--line); padding-block: clamp(50px,8vw,100px); display: grid; gap: clamp(22px,3vw,30px); }
+  .proj-cta > p { font-weight: 300; letter-spacing: -0.01em; font-size: clamp(1.5rem,3vw,2.3rem); line-height: 1.12; max-width: 22ch; }
+  .proj-cta__actions { display: flex; align-items: center; gap: clamp(20px,3vw,36px); flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem;
+    border: 1px solid var(--ink); padding: 16px 30px; cursor: pointer;
+    transition: background 0.4s var(--ease), color 0.4s var(--ease), gap 0.4s var(--ease);
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; gap: 20px; }
   .proj-nav {
     border-top: 1px solid var(--line);
     display: grid; grid-template-columns: 1fr auto 1fr;
@@ -250,6 +261,14 @@
     <div class="reveal d1">
       <p>De vloer is één doorlopend raster van handgevormde terracottategel — de kleur van droge aarde — die keuken, salon en gang materieel met elkaar verbindt. Wanden zijn bekleed met donker, verticaal geplaatst hout: gebrand tot diepbruin, met een nerf die voelbaar blijft onder de hand. De trappartij is van staal — onverhuld en constructief eerlijk. Het circulaire houten ribbeplafond toont de structuur van de woning zonder omhulsel — gedragen door de staalconstructie die onverhuld in de ruimte staat.</p>
       <p>In de keuken staat het eiland in mat brons als één compact, grondgebonden volume. Geen bovenbouw, geen opbouw — enkel een messingkraan als warm accent. In de leefruimte staan twee ronde stoelen in lichtgrijs textiel tegenover een salontafel in licht hout; het gezichtspunt richt zich naar de vliesgevel en het landschap buiten. Materialen die niet verslijten maar rijpen.</p>
+    </div>
+  </section>
+
+  <section class="shell proj-cta">
+    <p class="reveal">Een eigen ruimte in gedachten?</p>
+    <div class="proj-cta__actions reveal d1">
+      <a href="/contact" class="btn">Start uw project →</a>
+      <a href="/studio" class="link-line">Lees hoe ik werk →</a>
     </div>
   </section>
 
