@@ -55,18 +55,43 @@
     }
   }
 
+  /* Taaldetectie: Engelse subsite (/en/...) of <html lang="en"> → Engelse banner */
+  function isEnglish() {
+    try {
+      if (/^\/en(\/|$)/.test(location.pathname)) return true;
+      var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      return lang.indexOf('en') === 0;
+    } catch (e) { return false; }
+  }
+
+  var COPY = {
+    nl: {
+      label: 'Cookietoestemming',
+      text: 'Deze site gebruikt cookies om het bezoek te analyseren en de doeltreffendheid van advertenties te meten. U kiest zelf. <a href="/privacy">Privacybeleid</a>.',
+      deny: 'Weigeren',
+      accept: 'Accepteren'
+    },
+    en: {
+      label: 'Cookie consent',
+      text: 'This site uses cookies to analyse visits and measure the effectiveness of ads. The choice is yours. <a href="/en/privacy">Privacy policy</a>.',
+      deny: 'Decline',
+      accept: 'Accept'
+    }
+  };
+
   function buildBanner() {
     if (choice === 'granted' || choice === 'denied') return;
+    var t = isEnglish() ? COPY.en : COPY.nl;
     var wrap = document.createElement('div');
     wrap.className = 'cookie';
     wrap.setAttribute('role', 'dialog');
-    wrap.setAttribute('aria-label', 'Cookietoestemming');
+    wrap.setAttribute('aria-label', t.label);
     wrap.innerHTML =
       '<div class="cookie__inner shell">' +
-        '<p class="cookie__text">Deze site gebruikt cookies om het bezoek te analyseren en de doeltreffendheid van advertenties te meten. U kiest zelf. <a href="/privacy">Privacybeleid</a>.</p>' +
+        '<p class="cookie__text">' + t.text + '</p>' +
         '<div class="cookie__actions">' +
-          '<button type="button" class="cookie__btn cookie__btn--ghost" data-cc="deny">Weigeren</button>' +
-          '<button type="button" class="cookie__btn" data-cc="accept">Accepteren</button>' +
+          '<button type="button" class="cookie__btn cookie__btn--ghost" data-cc="deny">' + t.deny + '</button>' +
+          '<button type="button" class="cookie__btn" data-cc="accept">' + t.accept + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(wrap);
