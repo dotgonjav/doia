@@ -25,6 +25,12 @@ Elke aanpassing — groot of klein — moet deze regels respecteren.
   1. *"Een thuis hoeft niet ingewikkeld te zijn. Het moet kloppen."*
   2. *"Ontworpen vanuit wie u bent."*
   3. *"Eén hand, van het eerste gesprek tot het laatste detail."*
+- **Slogan** (kernboodschap #1 = de vaste tagline, overal identiek — visitekaartje, bio, handtekening, offerte). Vertaal nooit los; gebruik altijd exact deze paren:
+  - NL → *"Een thuis hoeft niet ingewikkeld te zijn. Het moet kloppen."*
+  - EN → *"A home doesn't have to be complicated. It has to feel right."*
+- **Support-tagline** (onder/naast de slogan, nooit als vervanging — het origin/differentiator-verhaal):
+  - NL → *"Geïnspireerd op nomadische tradities."*
+  - EN → *"Inspired by nomadic traditions."*
 - **Dienstnamen** (nooit wijzigen zonder expliciete opdracht):
   - S/01 → Kennismaking
   - S/02 → Eén ruimte
