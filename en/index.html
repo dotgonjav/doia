@@ -154,6 +154,7 @@
   .selected__pair { display: grid; grid-template-columns: 1fr; gap: clamp(16px,2.5vw,28px); margin-top: clamp(40px,6vw,72px); }
   @media (min-width: 720px) { .selected__pair { grid-template-columns: 1fr 1fr; } }
   .selected__pair .frame { aspect-ratio: 4 / 3; }
+  @media (max-width: 719px) { .selected__lead { aspect-ratio: 4 / 3; } }
   .proj-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 14px; margin-top: 18px; }
   .proj-meta__title { font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 300; letter-spacing: -0.01em; }
   .proj-meta__tags { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); text-align: right; }
