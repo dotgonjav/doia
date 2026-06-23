@@ -27,7 +27,7 @@
   var choice = null;
   try { choice = localStorage.getItem(KEY); } catch (e) {}
 
-  /* Microsoft Clarity — pas laden ná toestemming (analytics), één keer. */
+  /* Microsoft Clarity — niet-essentiële analytics: pas laden ná toestemming. */
   function loadClarity() {
     if (clarityLoaded) return;
     clarityLoaded = true;
