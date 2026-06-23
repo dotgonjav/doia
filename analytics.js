@@ -21,8 +21,22 @@
     window.gtag = function () { dataLayer.push(arguments); };
   }
 
+  var CLARITY_ID = 'xbonrd8v8m';
+  var clarityLoaded = false;
+
   var choice = null;
   try { choice = localStorage.getItem(KEY); } catch (e) {}
+
+  /* Microsoft Clarity — pas laden ná toestemming (analytics), één keer. */
+  function loadClarity() {
+    if (clarityLoaded) return;
+    clarityLoaded = true;
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+  }
 
   function grantConsent() {
     gtag('consent', 'update', {
@@ -31,7 +45,11 @@
       ad_personalization: 'granted',
       analytics_storage: 'granted'
     });
+    loadClarity();
   }
+
+  /* Bij een eerder gegeven toestemming Clarity meteen laden. */
+  if (choice === 'granted') loadClarity();
 
   /* Conversie bij een succesvol verzonden contactformulier */
   window.doiaTrackLead = function () {
